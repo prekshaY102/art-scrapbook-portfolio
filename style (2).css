@@ -246,13 +246,21 @@ button{ font:inherit; background:none; border:none; cursor:pointer; color:inheri
 .about{ background:var(--paper); }
 .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center; }
 .about-heading{ font-family:var(--font-display); font-weight:500; font-size:clamp(1.8rem,3.4vw,2.7rem); line-height:1.3; margin-block:16px 18px; }
-.about-body{ font-size:1rem; line-height:1.85; color:var(--ink-soft); max-width:52ch; }
+.about-body{ font-size:1rem; line-height:1.85; color:var(--ink-soft); }
 .about-body + .about-body{ margin-top:14px; }
 .about-edit-note{ margin-top:18px; font-family:var(--font-hand); font-size:1.05rem; color:var(--berry-deep); }
 .stickers-row{ display:flex; gap:16px; margin-top:28px; flex-wrap:wrap; }
 .stickers-row .sticker:nth-child(1){ transform:rotate(-6deg); }
 .stickers-row .sticker:nth-child(2){ transform:rotate(4deg); }
 .stickers-row .sticker:nth-child(3){ transform:rotate(-3deg); }
+.doodle-smile {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: -5px;
+    transform: rotate(-10deg);
+}
 
 
 /* ============================================================
