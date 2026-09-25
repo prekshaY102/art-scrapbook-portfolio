@@ -150,6 +150,7 @@ button{ font:inherit; background:none; border:none; cursor:pointer; color:inheri
    HERO
    ============================================================ */
 .hero{
+  min-height:100vh;
   min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
   background:
     radial-gradient(ellipse at 15% 20%, rgba(232,174,187,.5), transparent 55%),
@@ -365,3 +366,12 @@ button{ font:inherit; background:none; border:none; cursor:pointer; color:inheri
   .loader{ display:none; }
 }
 .reduced-motion .loader{ display:none; }
+
+/* mobile compatibility fallbacks — older phone browsers */
+.polaroid-photo, .lightbox-photo{ min-height:240px; }
+@supports (aspect-ratio: 1/1){
+  .polaroid-photo, .lightbox-photo{ min-height:0; }
+}
+.paper-texture::after{ top:0; right:0; bottom:0; left:0; }
+.lightbox{ top:0; right:0; bottom:0; left:0; }
+.nav{ -webkit-backdrop-filter:blur(6px); }
