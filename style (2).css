@@ -375,3 +375,5 @@ button{ font:inherit; background:none; border:none; cursor:pointer; color:inheri
 .paper-texture::after{ top:0; right:0; bottom:0; left:0; }
 .lightbox{ top:0; right:0; bottom:0; left:0; }
 .nav{ -webkit-backdrop-filter:blur(6px); }
+
+.about-visual .polaroid{ width:100%; max-width:none; margin-inline:0; }
