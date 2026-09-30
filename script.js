@@ -21,20 +21,33 @@
   });
 
   /* NAV TOGGLE */
-  var navToggle = document.getElementById("navToggle");
-  var navOverlay = document.getElementById("navOverlay");
-  navToggle.addEventListener("click", function () {
-    var open = navOverlay.classList.toggle("is-open");
-    navToggle.classList.toggle("is-open", open);
-    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-  document.querySelectorAll(".nav-overlay a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      navOverlay.classList.remove("is-open");
-      navToggle.classList.remove("is-open");
-    });
-  });
+var lockedScrollY = 0;
+function lockScroll(){
+  lockedScrollY = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = -lockedScrollY + 'px';
+  document.body.style.width = '100%';
+}
+function unlockScroll(){
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, lockedScrollY);
+}
 
+navToggle.addEventListener('click', function(){
+  var open = navOverlay.classList.toggle('is-open');
+  navToggle.classList.toggle('is-open', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if(open){ lockScroll(); } else { unlockScroll(); }
+});
+document.querySelectorAll('.nav-overlay a').forEach(function(link){
+  link.addEventListener('click', function(){
+    navOverlay.classList.remove('is-open');
+    navToggle.classList.remove('is-open');
+    unlockScroll();
+  });
+});
   /* PROGRESS BAR */
   var progressBar = document.getElementById("progressBar");
   window.addEventListener(
