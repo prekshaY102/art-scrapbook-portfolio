@@ -234,12 +234,12 @@ button{ font:inherit; background:none; border:none; cursor:pointer; color:inheri
   pointer-events:none;
 }
 
-@media (max-width:560px){
-  .hero-flower{ left:7%; }
-  .hero-note{ left:6%; bottom:25%; }
-  .hero-tape-2{ right:4%; }
-  .hero-sparkle{ right:10%; }
-  .hero-squiggle{ left:18%; }
+@media (max-width: 560px) {
+  .hero-flower { left: 7%; }
+  .hero-note { left: 6%; bottom: 13%; }
+  .hero-tape-2 { top: auto; bottom: 17%; right: 4%; }
+  .hero-sparkle { right: 10%; }
+  .hero-squiggle { left: 18%; }
 }
 /* ============================================================
    ABOUT
